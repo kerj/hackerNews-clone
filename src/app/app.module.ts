@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { NewsComponent } from './news/news.component';
 import { HomeComponent } from './home/home.component';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { HomeComponent } from './home/home.component';
     NavComponent,
     NewsComponent,
     HomeComponent,
+    CommentsComponent,
 
   ],
   imports: [

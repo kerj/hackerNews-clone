@@ -17,7 +17,7 @@ export class NewsComponent {
     new Article('https://stackorphans.tsak.net/', 'Answer long forgotten Stack Overflow questions', 3)
   ];
 
-  gotToArticlePage(clickedArticle: Article) {
+  goToArticlePage(clickedArticle: Article) {
     this.router.navigate(['article', clickedArticle.id]);
     
   }

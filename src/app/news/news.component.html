@@ -1,5 +1,7 @@
 <h2>Article List</h2>
 <div *ngFor="let currentArticle of articles">
-  <h4><strong><a href="{{currentArticle.url}}">{{currentArticle.title}}</a></strong> </h4>
+  <h2><strong><a href="{{currentArticle.url}}">{{currentArticle.title}}</a></strong> </h2>
+  <h4 (click)="goToArticlePage(currentArticle)">Comments</h4>
+</div>
 
 

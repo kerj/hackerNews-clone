@@ -2,6 +2,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
+import { CommentsComponent } from './comments/comments.component';
 
 const appRoutes: Routes = [
     {
@@ -10,7 +11,7 @@ const appRoutes: Routes = [
     },
     {
         path: 'article/:id',
-        component: NewsComponent
+        component: CommentsComponent
     }
 ];
 

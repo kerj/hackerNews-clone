@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Article } from '../article.model';
@@ -11,8 +11,10 @@ import { ArticleService } from '../article.service';
   providers: [ArticleService]
 })
 export class CommentsComponent implements OnInit {
+  @Output() submitClick = new EventEmitter();
   articleId: number = null;
   articleToDisplay: Article;
+  comments: string;
 
   constructor(
     private route: ActivatedRoute, 
@@ -25,6 +27,11 @@ export class CommentsComponent implements OnInit {
       this.articleId = parseInt(urlParameters['id']);
     });
     this.articleToDisplay = this.articleService.getArticleById(this.articleId);
+  }
+  
+  addComment(){
+    console.log(this.articleToDisplay);
+    this.submitClick.emit();
   }
 
 }

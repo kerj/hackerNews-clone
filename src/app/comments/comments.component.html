@@ -2,3 +2,10 @@
 <h5>{{articleToDisplay.url}}</h5>
 <hr>
 <h2>Look at all these here comments:</h2>
+<h5>{{articleToDisplay.comments}}</h5>
+
+<form>
+<input type="text" name="comment" [(ngModel)]="articleToDisplay.comments">
+<label for="comment">Leave a comment here</label>
+<button (click)='addComment()'>Submit</button>
+</form>

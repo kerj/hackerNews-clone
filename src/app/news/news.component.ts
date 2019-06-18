@@ -1,25 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Article } from '../article.model';
 import { Router } from '@angular/router';
+import { ArticleService } from '../article.service';
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css']
+  styleUrls: ['./news.component.css'],
+  providers: [ArticleService]
 })
-export class NewsComponent {
+export class NewsComponent implements OnInit {
+  articles: Article[];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private articleService: ArticleService) { }
 
-  articles: Article[] = [
-    new Article('https://www.reuters.tv/v/PQob/2019/06/18/how-human-excrement-is-helping-kenyan-farmers', 'Human excrement makes chicken eggs better', 1),
-    new Article('https://techcrunch.com/2019/06/18/amazon-expands-air-cargo-fleet-with-15-more-planes-will-have-70-planes-by-2021/', 'Amazon expands air cargo fleet with 15 more planes, will have 70 planes by 2021', 2),
-    new Article('https://stackorphans.tsak.net/', 'Answer long forgotten Stack Overflow questions', 3)
-  ];
+  ngOnInit(){
+    this.articles = this.articleService.getArticles();
+  }
 
   goToArticlePage(clickedArticle: Article) {
-    
+
     this.router.navigate(['article', clickedArticle.id]);
     
-  }
+  };
+
 }

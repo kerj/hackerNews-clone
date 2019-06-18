@@ -1,13 +1,16 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NavComponent } from './nav/nav.component';
-import { NewsComponent } from './news/news.component';
 import { HomeComponent } from './home/home.component';
+import { NewsComponent } from './news/news.component';
 
 const appRoutes: Routes = [
     {
         path: '',
         component: HomeComponent
+    },
+    {
+        path: 'article/:id',
+        component: NewsComponent
     }
 ];
 

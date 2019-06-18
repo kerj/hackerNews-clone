@@ -1,3 +1,6 @@
-<p>
-  home works!
-</p>
+<h2>Article List</h2>
+
+<div *ngFor="let currentArticle of articles">
+  <h4><strong>{{currentArticle.title}}</strong> link: <a href={{article.url}}></a></h4>
+
+</div>

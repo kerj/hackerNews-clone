@@ -18,6 +18,7 @@ export class NewsComponent {
   ];
 
   goToArticlePage(clickedArticle: Article) {
+    
     this.router.navigate(['article', clickedArticle.id]);
     
   }

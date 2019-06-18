@@ -1,3 +1,3 @@
 export class Article {
-    constructor(url: string, title: string, id: number) { }
+    constructor(public url: string, public title: string, public id: number) { }
 }
